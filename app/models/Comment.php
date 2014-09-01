@@ -3,7 +3,7 @@
 class Comment extends Eloquent {
 	public function commentable()
 	{
-		$this->morphTo();
+		return $this->morphTo();
 	}
 }
 

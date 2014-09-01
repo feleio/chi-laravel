@@ -3,7 +3,7 @@
 class Group extends Eloquent {
 	public function artworks()
 	{
-		$this->hasMany('Artwork');
+		return $this->hasMany('Artwork');
 	}
 }
 

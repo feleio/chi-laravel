@@ -3,22 +3,22 @@
 class Artwork extends Eloquent {
 	public function tags()
 	{
-		$this->morphToMany('Tag', 'taggable');
+		return $this->morphToMany('Tag', 'taggable');
 	}
 
 	public function group()
 	{
-		$this->belongsTo('Group');
+		return $this->belongsTo('Group');
 	}
 
 	public function images()
 	{
-		$this->belongsToMany('Image');
+		return $this->belongsToMany('Image');
 	}
 
 	public function comments()
 	{
-		$this->morphMany('Comment', 'commentable');
+		return $this->morphMany('Comment', 'commentable');
 	}
 }
 

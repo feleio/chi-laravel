@@ -3,12 +3,12 @@
 class Image extends Eloquent {
 	public function posts()
 	{
-		$this->hasMany('Post');
+		return $this->hasMany('Post');
 	}
 
 	public function artworks()
 	{
-		$this->belongsToMany('Artwork');
+		return $this->belongsToMany('Artwork');
 	}
 }
 

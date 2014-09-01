@@ -1,0 +1,63 @@
+body{
+	background: #AAAAAA;
+}
+
+img{
+	width: 100%; 
+	height: auto;
+}
+
+.container-diary{
+	position: relative;
+	padding: 0px;
+	margin: 0px auto;
+	background: white;
+	width: 960px; 
+}
+
+.container-post{
+	position: absolute;
+	padding: 30px 0px;
+	margin: 0px;
+	width: 480px; 
+	height: auto;
+	border-top: none;
+	border-bottom: 1px solid #E7E9EC;
+	opacity: 0;
+	transition: opacity 600ms ease;
+}
+
+.post{
+	margin: 0px auto;
+	padding: 0px;
+	width: 420px; 
+}
+
+.post-title-img{
+	margin: 0px 0px 20px;
+}
+
+.post-title{
+	color: #333;
+	font-size: 26px;
+}
+
+.post-content{
+	color: #666;
+	font-size: 14px;
+	line-height: 1.64;
+}
+
+#columns-separator{
+	position: absolute;
+	z-index: 12;
+	top: 0px;
+	bottom: 0px;
+	left: 50%;
+	width: 1px;
+	background: #E7E9EC;
+}
+
+
+
+
