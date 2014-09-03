@@ -19,23 +19,45 @@
     {{ HTML::style('css/m.css') }}
 
   <body>
-    <div class="container-diary">
-        @foreach ($posts as $post)
-        <div class="container-post">
-            <div class="post">
-                <div class="post-title-img">
-                    <img src="{{asset('imgs/uploads/'.$post->image->id.'.'.$post->image->type)}}" >
+    <div class="wrapper">
+        <div class="container-header">
+            <a href="#">
+                <div class="nav-link">
+                    <div class="nav-logo"><img src="{{asset('imgs/artwork.png')}}" alt=""></img></div>
+                    <p style="text-align: center;">Artwork</p>
                 </div>
-                <div class="post-title">{{{trim($post->title)}}}</div>
-                <div class="post-content">
-                    <?php $trimStr = trim($post->content); ?>
-                    {{{mb_substr($trimStr,0,min(strlen($trimStr),130))}}}
+            </a>
+            <a href="#">
+                <div class="nav-link">
+                    <div class="nav-logo"><img src="{{asset('imgs/artwork.png')}}" alt=""></img></div>
+                    <p style="text-align: center;">Diary</p>
+                </div>
+            </a>
 
-                </div>
+        </div>
+        <div class="wrapper-shadow">
+            <div class="container-diary">
+                @foreach ($posts as $post)
+                <div class="container-post">
+                    <div class="post">
+                        <div class="post-title-img">
+                            <img src="{{asset('imgs/uploads/'.$post->image->id.'.'.$post->image->type)}}" >
+                        </div>
+                        <div class="post-title">{{{trim($post->title)}}}</div>
+                        <div class="post-content">
+                            <?php $trimStr = trim($post->content); ?>
+                            {{{mb_substr($trimStr,0,min(strlen($trimStr),130)).'...'}}}
+
+                        </div>
+                    </div>
+                 </div>
+                @endforeach
+                <div id="columns-separator"></div>
             </div>
-         </div>
-        @endforeach
-        <div id="columns-separator"></div>
+            <div class="container-footer">
+                
+            </div>
+        </div>
     </div>
 
     <!-- Bootstrap core JavaScript

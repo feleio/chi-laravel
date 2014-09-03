@@ -1,5 +1,6 @@
 body{
-	background: #AAAAAA;
+	background: white;
+	margin: 0px;
 }
 
 img{
@@ -7,19 +8,55 @@ img{
 	height: auto;
 }
 
+.wrapper{
+	position: relative;
+	margin: 0px auto 40px;
+	width: 960px; 
+}
+
+.wrapper-shadow{
+-webkit-box-shadow: 5px 7px 0px 1px rgba(222,219,222,1);
+-moz-box-shadow: 5px 7px 0px 1px rgba(222,219,222,1);
+box-shadow: 5px 7px 0px 1px rgba(222,219,222,1);
+
+	border: 1px solid #777777;
+}
+
+.container-header{
+	position: relative;
+	background: white;
+	height: 90px;
+}
+
+.nav-link{
+	display: inline-block;
+	float: right;
+	width: 70px; 
+	margin: 10px 5px;
+}
+
+.nav-logo{
+	padding: 10px 15px;
+}
+
+.container-footer{
+	position: relative;
+	background: #E7E9EC;
+	height: 80px;
+}
+
 .container-diary{
 	position: relative;
 	padding: 0px;
-	margin: 0px auto;
+	margin: 0px;
 	background: white;
-	width: 960px; 
 }
 
 .container-post{
 	position: absolute;
 	padding: 30px 0px;
 	margin: 0px;
-	width: 480px; 
+	width: 478px; 
 	height: auto;
 	border-top: none;
 	border-bottom: 1px solid #E7E9EC;
@@ -39,13 +76,12 @@ img{
 
 .post-title{
 	color: #333;
-	font-size: 26px;
+	font-size: 28px;
 }
 
 .post-content{
 	color: #666;
-	font-size: 14px;
-	line-height: 1.64;
+	font-size: 16px;
 }
 
 #columns-separator{

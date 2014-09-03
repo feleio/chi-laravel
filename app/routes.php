@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('diary');
+	return Redirect::to('/posts');
 });
 
 Route::controller('images', 'ImageController');

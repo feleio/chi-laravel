@@ -5,7 +5,7 @@ var lefts = [0,WIDTH/2];
 // variables
 var tops = [0,0];
 
-$(placePosts);
+$(window).load(placePosts);
 
 function placePosts()
 {
