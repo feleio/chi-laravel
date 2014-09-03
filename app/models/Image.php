@@ -8,7 +8,7 @@ class Image extends Eloquent {
 
 	public function artworks()
 	{
-		return $this->belongsToMany('Artwork');
+		return $this->hasMany('Artwork');
 	}
 }
 

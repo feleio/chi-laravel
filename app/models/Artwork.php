@@ -11,9 +11,9 @@ class Artwork extends Eloquent {
 		return $this->belongsTo('Group');
 	}
 
-	public function images()
+	public function image()
 	{
-		return $this->belongsToMany('Image');
+		return $this->belongsTo('Image');
 	}
 
 	public function comments()
