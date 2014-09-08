@@ -21,19 +21,18 @@
   <body>
     <div class="wrapper">
         <div class="container-header">
-            <a href="#">
-                <div class="nav-link">
-                    <div class="nav-logo"><img src="{{asset('imgs/artwork.png')}}" alt=""></img></div>
-                    <p style="text-align: center;">Artwork</p>
+            <div class="nav-link" onclick="location.href='{{URL::to('/')}}';">
+                <div class="nav-logo">
+                    <img src="{{asset('imgs/artworklogo.png')}}" alt=""></img>
                 </div>
-            </a>
-            <a href="#">
-                <div class="nav-link">
-                    <div class="nav-logo"><img src="{{asset('imgs/artwork.png')}}" alt=""></img></div>
-                    <p style="text-align: center;">Diary</p>
+                <span style="text-align: center;">Artwork</span>
+            </div>
+            <div class="nav-link" onclick="location.href='#';">
+                <div class="nav-logo">
+                    <img src="{{asset('imgs/diarylogo.png')}}" alt=""></img>
                 </div>
-            </a>
-
+                <span style="text-align: center;">Diary</span>
+            </div>
         </div>
         <div class="wrapper-shadow">
             <div class="container-diary">
