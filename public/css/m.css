@@ -21,23 +21,21 @@ img{
 	border: 1px solid #777777;
 }
 
+/* .nav-logo{
+	
+}
+
+.nav-bar{
+	display: inline-block;
+	float: right;
+} */
+
 .container-header{
 	position: relative;
 	background: white;
-	height: 90px;
-	width: 170px;
+	height: 20px;
+	width: 100%;
 	margin: 10px auto 10px;
-}
-
-.nav-link{
-	display: inline-block;
-	width: 70px; 
-	margin: 0px 5px;
-	cursor: pointer;
-}
-
-.nav-logo{
-	height: 55px;
 }
 
 .container-footer{

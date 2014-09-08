@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Diary</title>
+    <title>我的插畫</title>
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -21,18 +20,14 @@
   <body>
     <div class="wrapper">
         <div class="container-header">
-            <div class="nav-link" onclick="location.href='{{URL::to('/')}}';">
-                <div class="nav-logo">
-                    <img src="{{asset('imgs/artworklogo.png')}}" alt=""></img>
-                </div>
-                <span style="text-align: center;">Artwork</span>
-            </div>
-            <div class="nav-link" onclick="location.href='#';">
-                <div class="nav-logo">
-                    <img src="{{asset('imgs/diarylogo.png')}}" alt=""></img>
-                </div>
-                <span style="text-align: center;">Diary</span>
-            </div>
+            <p class="pull-left" style="font-weight: bold">我的插畫</p>
+            <p class="pull-right">
+                <a href="#" class="nav-link">日記</a>
+                <span>|</span>
+                <a href="#" class="nav-link">畫作</a>
+                <span>|</span>
+                <a href="#" class="nav-link">聯絡我</a>
+            </p>
         </div>
         <div class="wrapper-shadow">
             <div class="container-diary">
@@ -57,6 +52,7 @@
                 
             </div>
         </div>
+
     </div>
 
     <!-- Bootstrap core JavaScript
