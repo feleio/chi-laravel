@@ -1,9 +1,12 @@
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css");
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css");
+
 body{
 	background: white;
 	margin: 0px;
 }
 
-img{
+.post-title-img img{
 	width: 100%; 
 	height: auto;
 }
@@ -21,14 +24,12 @@ img{
 	border: 1px solid #777777;
 }
 
-/* .nav-logo{
-	
+a.nav-active{
+	pointer-events: none;
+	cursor: default;
+	color: black;
+	font-weight: bold
 }
-
-.nav-bar{
-	display: inline-block;
-	float: right;
-} */
 
 .container-header{
 	position: relative;
@@ -44,11 +45,16 @@ img{
 	height: 80px;
 }
 
-.container-diary{
+.container-content{
 	position: relative;
 	padding: 0px;
 	margin: 0px;
 	background: white;
+}
+
+.container-content-padding{
+	position: relative;
+	padding: 20px;
 }
 
 .container-post{

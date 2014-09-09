@@ -23,7 +23,7 @@ function placePosts()
 
 	var max = Array.max(tops);
 
-	$('.container-diary').css({
+	$('.container-content').css({
 		'height':max
 	});
 }
