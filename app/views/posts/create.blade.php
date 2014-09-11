@@ -23,12 +23,16 @@
                 array('class' => 'form-control')) 
             }}
         </div>
-        
+
         <div class="form-group">
             {{ Form::label('content', 'Content') }}
             {{ 
                 Form::textarea('content', Input::old('content'), 
-                array('class' => 'form-control rte-zone')) 
+                array(  'class' => 'form-control',
+                        'name' => 'content',
+                        'id' => 'content',
+                        'rows' => '10',
+                        'cols' => '80' )) 
             }}
         </div>
 
@@ -39,18 +43,17 @@
 </div>
 @stop
 
-@section('css')
-{{ HTML::style('js/lib/rte/rte.css') }}
+@section('head-css')
 @stop
 
+@section('head-js')
+{{ HTML::script('ckeditor/ckeditor.js')}}
+@stop
 
-@section('js')
-{{ HTML::script('js/lib/rte/jquery.rte.js')}}
+@section('end-js')
 <script>
-    $(".rte-zone").rte({
-        content_css_url: "/js/lib/rte/rte-post.css",
-        media_url: "/js/lib/rte/",
-    });
+    CKEDITOR.replace('content');
+    CKEDITOR.config.height = 500;
 </script>
 @stop
 

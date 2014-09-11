@@ -17,9 +17,8 @@ class ImageController extends BaseController {
 
 	public function getIndex()
 	{
-		$images = Image::all();
-		$data = array('images' => $images, 'wahaha' => 12);
-		return View::make('images.index')->with($data);
+		$images = Image::orderBy('created_at', 'desc')->paginate(15);
+		return View::make('images.index')->with('images', $images);
 	}
 
 	public function postIndex()

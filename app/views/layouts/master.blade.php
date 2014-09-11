@@ -10,8 +10,8 @@
         <title>@yield('title')</title>
 
         {{ HTML::style('css/m.css') }}
-        @yield('css')
-
+        @yield('head-css')
+        @yield('head-js')
     </head>
 
     <body>
@@ -30,6 +30,10 @@
                 <p class="pull-right">
                     <a href="{{URL::to('/posts/create')}}" id="write-post" class="">
                         +寫日記
+                    </a>
+                    <span>|</span>
+                    <a href="{{URL::to('/images')}}" id="upload" class="">
+                        上載圖片
                     </a>
                     <span>|</span>
                     <a href="#" id="logout" class="">
@@ -54,6 +58,6 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
-        @yield('js')
+        @yield('end-js')
     </body>
 </html>

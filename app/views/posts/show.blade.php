@@ -10,5 +10,6 @@
 
 @stop
 
-@section('js')
+@section('head-js')
+
 @stop

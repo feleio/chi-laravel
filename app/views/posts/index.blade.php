@@ -3,9 +3,10 @@
 @section('title', '我的插畫')
 
 @section('content')
+
 @foreach ($posts as $post)
 <div class="container-post">
-    <div class="post">
+    <div class="post">  
         <div class="post-title-img">
             <img src="{{asset('imgs/uploads/'.$post->image->id.'.'.$post->image->type)}}" >
         </div>
@@ -21,7 +22,7 @@
 <div id="columns-separator"></div>
 @stop
 
-@section('js')
+@section('end-js')
 {{ HTML::script('js/diary.js')}}
 
 <script>

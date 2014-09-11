@@ -1,24 +1,9 @@
+@extends('layouts.master')
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+@section('title', 'Image upload')
 
-    <title>Upload photo</title>
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-
-    {{ HTML::style('css/m.css') }}
-
-  <body>
+@section('content')
+<div class="container-content-padding">
     @if (Session::has('isSuccess'))
     <div class="alert alert-{{{Session::get('isSuccess') ? 'success' : 'danger'}}}" role="alert">
         {{{ Session::get('message') }}}
@@ -38,19 +23,34 @@
     <hr>
 
     @foreach ($images as $img)
-    <div style="display: inline-block;">
-        <p>{{$img->id.'.'.$img->type}}</p>
+    <div class="container-image">
+    <div>
+            <?php $imgPath = "/imgs/uploads/".$img->id.'.'.$img->type; ?>
+            <span>{{$imgPath}}</span>
+            <button class="copy-button btn btn-xs btn-info" data-clipboard-text="{{$imgPath}}">Copy</button>
+            
+        </div>
         <img src="{{asset('imgs/uploads/'.$img->id.'.'.$img->type)}}" class="img-thumbnail" style="width: auto; height: 200px; ">
+
     </div>
     @endforeach
 
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <div>
+        {{$images->links()}}
+    </div>
 
-    {{ HTML::script('js/diary.js')}}
-  </body>
-</html>
+@stop
+
+@section('end-js')
+{{ HTML::script('js/lib/zeroclipboard/ZeroClipboard.min.js')}}
+
+<script>
+    $(document).ready(function() {
+        ZeroClipboard.config({swfPath: "/js/lib/zeroclipboard/ZeroClipboard.swf"});
+        var clip = new ZeroClipboard($(".copy-button"));
+    });
+
+    $("#upload").addClass("nav-active");
+</script>
+
+@stop

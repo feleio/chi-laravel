@@ -4,7 +4,7 @@ class PostController extends \BaseController {
 
 	public function index()
 	{
-		$posts = Post::with('image')->get();
+		$posts = Post::with('image')->orderBy('created_at','desc')->get();
 		return View::make('posts.index')->with('posts',$posts);
 	}
 

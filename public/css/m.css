@@ -69,6 +69,11 @@ a.nav-active{
 	transition: opacity 600ms ease;
 }
 
+.container-image{
+	display: inline-block;
+	margin: 0px 0px 20px;
+}
+
 .post{
 	margin: 0px auto;
 	padding: 0px;
@@ -76,7 +81,7 @@ a.nav-active{
 }
 
 .post-title-img{
-	margin: 0px 0px 20px;
+	margin: 0px 0px 25px;
 }
 
 .post-title{
