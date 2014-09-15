@@ -19,7 +19,7 @@
             <div class="container-header">
                 <p class="pull-left" style="font-weight: bold">我的插畫</p>
                 <p class="pull-right">
-                    <a href="#" id="diary" class="">日記</a>
+                    <a href="{{URL::to('/posts')}}" id="diary" class="">日記</a>
                     <span>|</span>
                     <a href="#" id="artwork" class="">畫作</a>
                     <span>|</span>
@@ -32,7 +32,7 @@
                         +寫日記
                     </a>
                     <span>|</span>
-                    <a href="{{URL::to('/images')}}" id="upload" class="">
+                    <a href="{{URL::to('/images')}}" id="upload" target="_blank" class="">
                         上載圖片
                     </a>
                     <span>|</span>

@@ -12,7 +12,7 @@
         </div>
         <div class="post-title">{{{trim($post->title)}}}</div>
         <div class="post-content">
-            <?php $trimStr = trim($post->content); ?>
+            <?php $trimStr = strip_tags(trim($post->content)); ?>
             {{{mb_substr($trimStr,0,min(strlen($trimStr),130)).'...'}}}
 
         </div>

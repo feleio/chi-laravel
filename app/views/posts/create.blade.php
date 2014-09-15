@@ -54,6 +54,8 @@
 <script>
     CKEDITOR.replace('content');
     CKEDITOR.config.height = 500;
+
+    $("#write-post").addClass("nav-active");
 </script>
 @stop
 
