@@ -1,0 +1,61 @@
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css");
+@import url("//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css");
+
+body{
+	background: white;
+	margin: 0px;
+}
+
+.f_left{
+	float: left;
+}
+
+.f_right{
+	float: right;
+}
+
+.c-center{
+	position: relative;
+	margin: 0 auto;
+	width: 820px;
+}
+
+.c-header-height{
+	height: 277px;
+}
+
+.c-header{
+	background: url('/imgs/header_bar.jpg');
+	width: 100%;
+}
+
+.c-inline{
+	display: inline-block;
+}
+
+.header-bar-c-links{
+	margin: 109px 0 104px;
+	width: 300px;
+	height: 64px;
+}
+
+.header-bar-c-center{
+	margin: 109px 0 104px;
+	width: 220px;
+	height: 64px;
+}
+
+.header-bar-link{
+	color: #304989;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	margin: 20px 37px;
+}
+
+.header-bar-logo{
+	position: absolute;
+	top: 25px;
+	left: 300px;
+	width: 215px;
+	height: 219px;
+}

@@ -9,46 +9,28 @@
 
         <title>@yield('title')</title>
 
-        {{ HTML::style('css/m.css') }}
+        {{ HTML::style('css/master.css') }}
         @yield('head-css')
         @yield('head-js')
     </head>
 
     <body>
-        <div class="wrapper">
-            <div class="container-header">
-                <p class="pull-left" style="font-weight: bold">我的插畫</p>
-                <p class="pull-right">
-                    <a href="{{URL::to('/posts')}}" id="diary" class="">日記</a>
-                    <span>|</span>
-                    <a href="#" id="artwork" class="">畫作</a>
-                    <span>|</span>
-                    <a href="#" id="email" class="">聯絡我</a>
-                </p>
-            </div>
-            <div class="container-header">
-                <p class="pull-right">
-                    <a href="{{URL::to('/posts/create')}}" id="write-post" class="">
-                        +寫日記
-                    </a>
-                    <span>|</span>
-                    <a href="{{URL::to('/images')}}" id="upload" target="_blank" class="">
-                        上載圖片
-                    </a>
-                    <span>|</span>
-                    <a href="#" id="logout" class="">
-                        登出
-                    </a>
-                </p>
-            </div>
-            <div class="wrapper-shadow">
-                <div class="container-content">
-                @yield('content')
+        <div class="c-header">
+            <div class="c-center c-header-height">
+                <div class="header-bar-c-links f_left">
+                    <div class="header-bar-link c-inline">ARTWORK</div>
+                    <div class="header-bar-link c-inline">BLOG</div>
                 </div>
-                <div class="container-footer">
+                <div class="header-bar-c-center f_left"></div>
+                <div class="header-bar-c-links f_left">
+                    <div class="header-bar-link c-inline">ABOUT</div>
+                    <div class="header-bar-link c-inline">EMAIL ME</div>
+                </div>
+                <div class="header-bar-logo">
+                    <img src="/imgs/header_logo2.png" alt="">
+                    </img>
                 </div>
             </div>
-
         </div>
 
         <!-- Bootstrap core JavaScript
