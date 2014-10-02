@@ -2,6 +2,12 @@
 
 class PostController extends \BaseController {
 
+	public function __construct()
+    {
+        $this->beforeFilter('auth', array('only' => 
+        	array('create', 'store', 'edit', 'update')));
+    }
+
 	public function index()
 	{
 		$posts = Post::with('image')->orderBy('created_at','desc')->get();
@@ -15,7 +21,7 @@ class PostController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('posts.create');
+		return View::make('posts.form');
 	}
 
 
@@ -32,7 +38,7 @@ class PostController extends \BaseController {
 		$post->image_id = Input::get('image_id');
 		$post->save();
 
-		return Redirect::to('posts/create');
+		return Redirect::to('posts');
 	}
 
 
@@ -45,7 +51,18 @@ class PostController extends \BaseController {
 	public function show($id)
 	{
 		$post = Post::findOrFail($id);
-		return View::make("posts.show")->with('post', $post);
+		
+		$post->seen_count = $post->seen_count + 1;
+		$post->save();
+
+		$likedPosts = json_decode(Cookie::get('liked_posts', '[]'));
+		$isLiked = in_array($post->id, $likedPosts);
+
+		$data = array( 
+			'post' => Post::findOrFail($id),
+			'isLiked' => $isLiked );
+
+		return View::make("posts.show")->with($data);
 	}
 
 
@@ -57,7 +74,8 @@ class PostController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = Post::findOrFail($id);
+		return View::make('posts.form')->with('post', $post);
 	}
 
 
@@ -69,20 +87,38 @@ class PostController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$post = Post::findOrFail($id);
+		$post->title = Input::get('title');
+		$post->content = Input::get('content');
+		$post->image_id = Input::get('image_id');
+		$post->save();
+
+		return Redirect::to('posts/'.$id);
 	}
 
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
+	public function like($id)
 	{
-		//
+		if (Request::ajax())
+		{
+			$post = Post::findOrFail($id);
+			$post->like_count = $post->like_count + 1;
+			$post->save();
+
+			$likedPosts = json_decode(Cookie::get('liked_posts', '[]'));
+
+			if ( !in_array($post->id, $likedPosts) )
+				$likedPosts[] = $post->id;
+			$likedPostsJson = json_encode($likedPosts);
+
+			$cookie = Cookie::forever('liked_posts', $likedPostsJson);
+
+			$response = Response::json(array(
+				'result' => 1,
+				'like_count' => $post->like_count));
+			$response->headers->setCookie($cookie);
+			return $response;
+		}
+		
+		App::abort(404);
 	}
-
-
 }

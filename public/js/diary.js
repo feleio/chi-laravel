@@ -1,5 +1,5 @@
 // constants
-var WIDTH = 960;
+var WIDTH = 860;
 var lefts = [0,WIDTH/2];
 
 // variables
@@ -9,7 +9,7 @@ $(window).load(placePosts);
 
 function placePosts()
 {
-	$('.container-post').each(function(i){
+	$('.c-post').each(function(i){
 		var min = Array.min(tops);
 		var idx = $.inArray(min, tops);
 		var left = lefts[idx];
@@ -23,7 +23,7 @@ function placePosts()
 
 	var max = Array.max(tops);
 
-	$('.container-content').css({
+	$('.c-content').css({
 		'height':max
 	});
 }

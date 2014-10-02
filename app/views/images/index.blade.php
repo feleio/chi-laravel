@@ -2,6 +2,18 @@
 
 @section('title', 'Image upload')
 
+@section('head-css')
+<style>
+    .container-image{  
+        display: inline-block;
+        margin: 0px 5px 20px;
+    }
+    .paging{
+        text-align: center;
+    }
+</style>
+@stop
+
 @section('content')
 <div class="container-content-padding">
     @if (Session::has('isSuccess'))
@@ -14,6 +26,8 @@
     <div class="form-group">
         {{ Form::label('file','File') }}
         {{ Form::file('image') }}
+        {{ Form::checkbox('artwork') }}
+        {{ Form::label('artwork','Artwork') }}
     </div>
 
     <button type="upload" class="btn btn-primary">Upload</button>
@@ -22,23 +36,24 @@
 
     <hr>
 
-    @foreach ($images as $img)
-    <div class="container-image">
     <div>
-            <?php $imgPath = "/imgs/uploads/".$img->id.'.'.$img->type; ?>
-            <span>{{$imgPath}}</span>
-            <button class="copy-button btn btn-xs btn-info" data-clipboard-text="{{$imgPath}}">Copy</button>
-            
+        @foreach ($images as $img)
+        <div class="container-image">
+        <div>
+                <?php $imgPath = "/imgs/uploads/".$img->id.'.'.$img->type; ?>
+                <span>{{$imgPath}}</span>
+                <button class="copy-button btn btn-xs btn-info" data-clipboard-text="{{$imgPath}}">Copy</button>
+                
+            </div>
+            <img src="{{asset('imgs/uploads/'.$img->id.'.'.$img->type)}}" class="img-thumbnail" style="width: auto; height: 200px; ">
+
         </div>
-        <img src="{{asset('imgs/uploads/'.$img->id.'.'.$img->type)}}" class="img-thumbnail" style="width: auto; height: 200px; ">
-
+        @endforeach
     </div>
-    @endforeach
-
-    <div>
+    
+    <div class="paging">
         {{$images->links()}}
     </div>
-
 @stop
 
 @section('end-js')

@@ -17,7 +17,7 @@ body{
 .c-center{
 	position: relative;
 	margin: 0 auto;
-	width: 820px;
+	width: 860px;
 }
 
 .c-header-height{
@@ -29,13 +29,21 @@ body{
 	width: 100%;
 }
 
+.c-content{
+	margin-bottom: 100px;
+}
+
+.c-admin{
+	height: 20px;
+}
+
 .c-inline{
 	display: inline-block;
 }
 
 .header-bar-c-links{
 	margin: 109px 0 104px;
-	width: 300px;
+	width: 320px;
 	height: 64px;
 }
 
@@ -49,13 +57,45 @@ body{
 	color: #304989;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 18px;
-	margin: 20px 37px;
+	margin: 20px 42px;
 }
 
 .header-bar-logo{
 	position: absolute;
 	top: 25px;
-	left: 300px;
+	left: 315px;
 	width: 215px;
 	height: 219px;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+/* unvisited link */
+.header-bar-link a:link {
+    color: #304989;
+}
+
+/* visited link */
+.header-bar-link a:visited {
+    color: #304989;
+}
+
+/* mouse over link */
+.header-bar-link a:hover {
+    text-decoration: none;
+    color: #052977;
+}
+
+/* selected link */
+.header-bar-link a:active {
+    color: #304989;
+}
+
+.separater{
+	width: 100%;
+	height: 2px;
+	margin: 10px 0px;
+	border-bottom: 1px solid #B5AC86;
 }

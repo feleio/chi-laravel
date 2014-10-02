@@ -15,6 +15,11 @@ class ImageController extends BaseController {
 	|
 	*/
 
+	public function __construct()
+    {
+        $this->beforeFilter('auth');
+    }
+
 	public function getIndex()
 	{
 		$images = Image::orderBy('created_at', 'desc')->paginate(15);
@@ -55,8 +60,14 @@ class ImageController extends BaseController {
 		$image->type = $type;
 		$image->save();
 
-		if ($imgFile->move('imgs/uploads/', $image->id.'.'.$type))
+		$destDir = 'imgs/uploads/';
+		if ($imgFile->move($destDir, $image->id.'.'.$type))
 		{
+			$this->generateThumnail($image->id, $type, $destDir);
+
+			if (Input::get('artwork'))
+				$this->createArtwork($image->id);
+
 			Session::flash('isSuccess', True);
 			Session::flash('message', 'Uploaded successfully');
 		}
@@ -67,5 +78,43 @@ class ImageController extends BaseController {
 		}
 
 		return Redirect::to('images');
+	}
+
+	private function generateThumnail($id, $type, $destDir)
+	{
+		$oriImgPath = $destDir.$id.'.'.$type;
+
+		if ($type == 'gif')
+			$oriImg = imagecreatefromgif($oriImgPath);
+		elseif ($type == 'jpg')
+			$oriImg = imagecreatefromjpeg($oriImgPath);
+		elseif ($type == 'png')
+			$oriImg = imagecreatefrompng($oriImgPath);
+
+		$ox = imagesx($oriImg);
+	    $oy = imagesy($oriImg);
+	     
+	    $ns = Config::get('image.thumbnail_length');
+	     
+	    $newImg = imagecreatetruecolor($ns, $ns);
+	    if ($oy < $ox)
+	    {
+	    	$x = ($ox - $oy)/2;
+	    	imagecopyresampled ($newImg, $oriImg, 0,0,$x,0, $ns,$ns,$oy,$oy);
+	    }
+	    else
+	    {
+	    	$y = ($oy - $ox)/2;
+	    	imagecopyresampled ($newImg, $oriImg, 0,0,0,$y, $ns,$ns,$ox,$ox);
+	    }
+	 
+	    imagejpeg($newImg, $destDir . $id.'_thm'.'.'.$type);
+	}
+
+	private function createArtwork($imageId)
+	{
+		$artwork = new Artwork;
+		$artwork->image_id = $imageId;
+		$artwork->save();
 	}
 }

@@ -1,0 +1,49 @@
+.c-post{
+	position: absolute;
+	padding: 15px 0px;
+	margin: 0px 0px 25px;
+	width: 430px; 
+	height: auto;
+	border: none;
+	opacity: 0;
+	transition: opacity 600ms ease;
+}
+
+.post{
+	margin: 0px auto;
+	padding: 0px;
+	width: 400px; 
+}
+
+.post-title-img{
+	margin: 0px 0px 10px;
+}
+
+.post-title{
+	color: #333;
+	font-size: 28px;
+	margin: 0px 0px 5px;
+}
+
+.post-content{
+	color: #666;
+	font-size: 16px;
+	margin: 0px 0px 5px;
+}
+
+.post-title-img img{
+	width: 100%; 
+	height: auto;
+}
+
+.post-continue{
+	margin: 0px 0px 20px;
+}
+
+.post-footer{
+	margin: 0px;
+}
+
+.post-function {
+	margin: 0px 6px;
+}

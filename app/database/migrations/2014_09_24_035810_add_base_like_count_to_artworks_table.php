@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration {
+class AddBaseLikeCountToArtworksTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,9 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('users', function(Blueprint $table)
+		Schema::table('artworks', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->string('name',20)->unique();
-			$table->string('password',100);
-			$table->remembertoken();
-			$table->timestamps();
+			$table->integer('base_like_count');
 		});
 	}
 
@@ -29,7 +25,10 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::table('artworks', function(Blueprint $table)
+		{
+			$table->dropColumn('base_like_count');
+		});
 	}
 
 }

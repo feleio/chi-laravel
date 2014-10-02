@@ -6,12 +6,14 @@
 <div class="container-content-padding">
     {{ HTML::ul($errors->all()) }}
 
-    {{ Form::open(array('url' => 'posts')) }}
+    {{ Form::open(array(
+        'url' => isset($post) ? 'posts/'.$post->id : 'posts',
+        'method' => isset($post) ? 'put' : 'post')) }}
 
         <div class="form-group">
             {{ Form::label('title', 'Title') }}
             {{ 
-                Form::text('title', Input::old('title'), 
+                Form::text('title', isset($post) ? $post->title : '', 
                 array('class' => 'form-control')) 
             }}
         </div>
@@ -19,7 +21,7 @@
         <div class="form-group">
             {{ Form::label('image_id', 'Title Image id') }}
             {{ 
-                Form::text('image_id', Input::old('image_id'), 
+                Form::text('image_id', isset($post) ? $post->image_id : '', 
                 array('class' => 'form-control')) 
             }}
         </div>
@@ -27,7 +29,7 @@
         <div class="form-group">
             {{ Form::label('content', 'Content') }}
             {{ 
-                Form::textarea('content', Input::old('content'), 
+                Form::textarea('content', isset($post) ? $post->content : '', 
                 array(  'class' => 'form-control',
                         'name' => 'content',
                         'id' => 'content',
@@ -41,9 +43,6 @@
 
     {{ Form::close() }}
 </div>
-@stop
-
-@section('head-css')
 @stop
 
 @section('head-js')

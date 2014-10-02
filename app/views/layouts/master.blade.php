@@ -10,21 +10,45 @@
         <title>@yield('title')</title>
 
         {{ HTML::style('css/master.css') }}
+        {{ HTML::style('//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css')}}
         @yield('head-css')
         @yield('head-js')
     </head>
 
     <body>
+        <div class="c-admin c-center">
+            @if (Auth::check())
+            <div class="f_right">
+                <a class="btn btn-primary btn-xs" href="{{URL::to('posts/create')}}">
+                    write
+                </a>
+                <a class="btn btn-primary btn-xs" href="{{URL::to('images')}}">
+                    upload
+                </a>
+                <a class="btn btn-danger btn-xs" href="{{URL::to('auth/logout')}}">
+                    logout
+                </a>
+            </div>
+            @endif
+        </div>
         <div class="c-header">
             <div class="c-center c-header-height">
                 <div class="header-bar-c-links f_left">
-                    <div class="header-bar-link c-inline">ARTWORK</div>
-                    <div class="header-bar-link c-inline">BLOG</div>
+                    <div class="header-bar-link c-inline">
+                        <a href="{{URL::to('artworks')}}">ARTWORK</a>
+                    </div>
+                    <div class="header-bar-link c-inline">
+                        <a href="{{URL::to('posts')}}">BLOG</a>
+                    </div>
                 </div>
                 <div class="header-bar-c-center f_left"></div>
                 <div class="header-bar-c-links f_left">
-                    <div class="header-bar-link c-inline">ABOUT</div>
-                    <div class="header-bar-link c-inline">EMAIL ME</div>
+                    <div class="header-bar-link c-inline">
+                        <a href="#">ABOUT</a>
+                    </div>
+                    <div class="header-bar-link c-inline">
+                        <a href="#">EMAIL ME</a>
+                    </div>
                 </div>
                 <div class="header-bar-logo">
                     <img src="/imgs/header_logo2.png" alt="">
@@ -32,6 +56,10 @@
                 </div>
             </div>
         </div>
+        <div class="c-content c-center">
+            @yield('content')
+        </div>
+
 
         <!-- Bootstrap core JavaScript
         ================================================== -->

@@ -13,9 +13,25 @@
 
 Route::get('/', function()
 {
-	return Redirect::to('/posts');
+	return Redirect::to('/artworks');
 });
+
+Route::get('/chichi', function()
+{
+	return Redirect::to('/auth/login');
+});
+
+Route::controller('auth','AuthController');
 
 Route::controller('images', 'ImageController');
 
-Route::resource('posts', 'PostController');
+Route::resource('posts', 'PostController', 
+	array('except' => array('destroy')));
+
+Route::post('posts/{id}/like',array('uses'=>'PostController@like'));
+
+Route::resource('artworks', 'ArtworkController',
+	array('except' => 
+		array('create', 'store', 'show', 'edit', 'update', 'destory')));
+
+//Route::resource('users', 'UserController');
