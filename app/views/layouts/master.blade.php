@@ -47,11 +47,11 @@
                         <a href="#">ABOUT</a>
                     </div>
                     <div class="header-bar-link c-inline">
-                        <a href="#">EMAIL ME</a>
+                        <a href="{{URL::to('messages/send')}}">EMAIL ME</a>
                     </div>
                 </div>
                 <div class="header-bar-logo">
-                    <img src="/imgs/header_logo2.png" alt="">
+                    <img src="/imgs/header_logo.png" alt="">
                     </img>
                 </div>
             </div>

@@ -21,6 +21,11 @@ Route::get('/chichi', function()
 	return Redirect::to('/auth/login');
 });
 
+Route::get('/aboutme', function()
+{
+	return View::make('aboutme');
+});
+
 Route::controller('auth','AuthController');
 
 Route::controller('images', 'ImageController');
@@ -35,3 +40,5 @@ Route::resource('artworks', 'ArtworkController',
 		array('create', 'store', 'show', 'edit', 'update', 'destory')));
 
 //Route::resource('users', 'UserController');
+
+Route::controller('messages', 'MessageController');
