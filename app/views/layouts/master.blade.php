@@ -44,7 +44,7 @@
                 <div class="header-bar-c-center f_left"></div>
                 <div class="header-bar-c-links f_left">
                     <div class="header-bar-link c-inline">
-                        <a href="#">ABOUT</a>
+                        <a href="{{URL::to('aboutme')}}">ABOUT</a>
                     </div>
                     <div class="header-bar-link c-inline">
                         <a href="{{URL::to('messages/send')}}">EMAIL ME</a>
