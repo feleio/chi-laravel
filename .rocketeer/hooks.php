@@ -17,12 +17,13 @@
 		'setup'   => array(),
 		'deploy'  => array(),
 		'cleanup' => array(),
+		'rollback' => array('php artisan migrate:rollback')
 	),
 
 	// Tasks to execute after the core Rocketeer Tasks
 	'after'  => array(
 		'setup'   => array(),
-		'deploy'  => array(),
+		'deploy'  => array('php artisan migrate'),
 		'cleanup' => array(),
 	),
 	

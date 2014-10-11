@@ -17,7 +17,7 @@ body{
 .c-center{
 	position: relative;
 	margin: 0 auto;
-	width: 860px;
+	width: 880px;
 }
 
 .c-header-height{
@@ -26,6 +26,7 @@ body{
 
 .c-header{
 	background: url('/imgs/header_bar.jpg');
+	min-width: 880px;
 	width: 100%;
 }
 
@@ -43,7 +44,7 @@ body{
 
 .header-bar-c-links{
 	margin: 109px 0 104px;
-	width: 320px;
+	width: 330px;
 	height: 64px;
 }
 

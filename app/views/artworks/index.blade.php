@@ -6,7 +6,7 @@
 {{ HTML::style('css/lib/lightbox-2.7.1/lightbox.css'); }}
 <style>
 	.c-artwork{
-		margin: 6px
+		margin: 8px
 	}
 
 	.c-artwork img{

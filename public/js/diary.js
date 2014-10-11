@@ -1,5 +1,5 @@
 // constants
-var WIDTH = 860;
+var WIDTH = 880;
 var lefts = [0,WIDTH/2];
 
 // variables
