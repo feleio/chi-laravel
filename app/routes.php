@@ -39,6 +39,6 @@ Route::resource('artworks', 'ArtworkController',
 	array('except' => 
 		array('create', 'store', 'show', 'edit', 'update', 'destory')));
 
-Route::resource('users', 'UserController');
+#Route::resource('users', 'UserController');
 
 Route::controller('messages', 'MessageController');

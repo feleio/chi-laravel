@@ -39,9 +39,9 @@ return array(
 	'connections'      => array(
 		'production' => array(
 			'host'      => 'ec2-54-64-231-188.ap-northeast-1.compute.amazonaws.com',
-			'username'  => 'ubuntu',
+			'username'  => 'deploy',
 			'password'  => '',
-			'key'       => '/home/vagrant/.ssh/web_hosting_japan.pem',
+			'key'       => '/home/vagrant/.ssh/id_rsa_deploy',
 			'keyphrase' => '',
 			'agent'     => '',
 		),

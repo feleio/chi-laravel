@@ -54,9 +54,8 @@ return array(
 		// You can pass paths in brackets, so {path.public} will return
 		// the correct path to the public folder
 		'files'    => array(
-			'app/database/production.sqlite',
 			'app/storage',
-			'public',
+			'public/imgs/uploads',
 		),
 
 		// Here you can configure what actions will be executed to set
@@ -64,9 +63,9 @@ return array(
 		// a single command as a string or an array of commands
 		'callback' => function ($task, $file) {
 			return array(
-				sprintf('sudo chmod -R 755 %s', $file),
-				sprintf('sudo chmod -R g+s %s', $file),
-				sprintf('sudo chown -R www-data:www-data %s', $file),
+				sprintf('chmod -R 755 %s', $file),
+				sprintf('chmod -R g+s %s', $file),
+				sprintf('chown -R www-data:www-data %s', $file),
 			);
 		},
 
