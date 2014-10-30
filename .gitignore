@@ -1,6 +1,5 @@
 /bootstrap/compiled.php
 /vendor
-/public/imgs/uploads
 /.rocketeer/logs
 composer.phar
 composer.lock
