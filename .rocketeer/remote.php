@@ -55,7 +55,9 @@ return array(
 		// the correct path to the public folder
 		'files'    => array(
 			'app/storage',
-			'public/imgs/uploads',
+			'app/storage/logs',//it is shared
+			'app/storage/sessions',// it is shared
+			'public/imgs/uploads',// it is shared
 		),
 
 		// Here you can configure what actions will be executed to set
