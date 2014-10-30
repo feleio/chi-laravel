@@ -63,7 +63,7 @@ return array(
 		// a single command as a string or an array of commands
 		'callback' => function ($task, $file) {
 			return array(
-				sprintf('setfacl -m u:www-data:rwx %s', $file),
+				sprintf('setfacl -RLm u:www-data:rwx %s', $file),
 			);
 		},
 
