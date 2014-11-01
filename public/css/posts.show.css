@@ -8,7 +8,51 @@
 	border-bottom: 
 }
 
-.c-post-footer{
-	width: 230px;
-	margin: 0px auto;
+.c-function-link{
+	color: black;
 }
+
+.c-function-sep{
+	margin-right: 15px;
+}
+
+.c-post-info{
+	margin-bottom: 15px;
+}
+
+/* unvisited link */
+.c-function-link a:link {
+    color: #000000;
+}
+
+/* visited link */
+.c-function-link a:visited {
+    color: #000000;
+}
+
+/* mouse over link */
+.c-function-link a:hover {
+    text-decoration: none;
+    color: #666666;
+}
+
+/* selected link */
+.c-function-link a:active {
+    color: #666666;
+}
+
+.c-post-footer{
+	margin: 15px 0px;
+}
+
+.link-disable{
+   pointer-events: none;
+   cursor: default;
+}
+
+/* 
+.fa-heart,.fa-heart-o{
+	color: #F0609C;
+}
+ */
+

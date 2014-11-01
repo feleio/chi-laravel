@@ -17,7 +17,7 @@
 		</div>
 
 		<div class="form-group">
-			{{ Form::label('email', '你的email(optional)') }}
+			{{ Form::label('email', '你的電郵') }}
 			{{ Form::email('email', $savedEmail, 
 				array('class' => 'form-control')) }}
 		</div>
