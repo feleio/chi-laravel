@@ -19,6 +19,8 @@
         <div class="c-admin c-center">
             @if (Auth::check())
             <div class="f_right">
+                <span>{{$mailsCount}} mails</span>
+                <span>{{$requestsCount}} postcard</span>
                 <a class="btn btn-primary btn-xs" href="{{URL::to('posts/create')}}">
                     write
                 </a>

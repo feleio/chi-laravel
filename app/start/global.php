@@ -84,4 +84,14 @@ App::down(function()
 |
 */
 
+
+
 require app_path().'/filters.php';
+
+View::composer('*', function($view)
+{
+	$view->with(array(
+		'mailsCount'=> Message::count(),
+		'requestsCount'=> Postcardrequest::count(),
+		));
+});

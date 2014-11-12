@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return Redirect::to('/artworks');
+	return Redirect::to('/postcard');
 });
 
 Route::get('/chichi', function()
@@ -24,6 +24,11 @@ Route::get('/chichi', function()
 Route::get('/aboutme', function()
 {
 	return View::make('aboutme');
+});
+
+Route::get('/postcard', function()
+{
+	return View::make('postcard');
 });
 
 Route::controller('auth','AuthController');
@@ -42,3 +47,4 @@ Route::resource('artworks', 'ArtworkController',
 #Route::resource('users', 'UserController');
 
 Route::controller('messages', 'MessageController');
+Route::controller('postcardrequests', 'PostcardrequestController');
