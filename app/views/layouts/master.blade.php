@@ -53,8 +53,9 @@
                     </div>
                 </div>
                 <div class="header-bar-logo">
-                    <img src="/imgs/header_logo.png" alt="">
-                    </img>
+                    <a href="{{URL::to('/')}}">
+                        <img src="/imgs/header_logo.png" alt=""></img>
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,43 @@
+.c-left{
+	width: 440px;
+}
+
+.c-right{
+	width: 440px;b
+}
+
+.carousel-control.left,.carousel-control.right{
+	background-image: none;
+}
+
+.carousel-indicators li { 
+	visibility: hidden; 
+}
+
+.post-card-content{
+	margin: 8px
+}
+
+.c-artwork{
+	margin: 8px
+}
+
+.c-artwork img{
+	border: 1px solid #B5AC86;
+}
+
+.carousel{
+	margin: 8px;
+	border: 1px solid #B5AC86;
+}
+
+.c-above{
+	min-height: 420px;
+	height: 465px;
+	border-bottom: 1px solid #B5AC86;
+}
+
+.c-below{
+	margin: 20px 0;
+	position: relative;
+}

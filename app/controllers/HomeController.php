@@ -17,7 +17,15 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
-		return View::make('hello');
+		$artworks = Artwork::with('image')
+			->orderBy('created_at','desc')->take(4)->get();
+
+		$posts = Post::with('image')
+			->orderBy('created_at','desc')->get();
+
+		$data = array(	'artworks' => $artworks,
+						'posts' => $posts );
+		return View::make('home')->with($data);
 	}
 
 }

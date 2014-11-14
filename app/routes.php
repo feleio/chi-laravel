@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return Redirect::to('/postcard');
-});
+Route::get('/', array('uses' => 'HomeController@showWelcome'));
 
 Route::get('/chichi', function()
 {

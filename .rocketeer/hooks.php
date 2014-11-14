@@ -17,7 +17,7 @@
 		'setup'   => array(),
 		'deploy'  => array(),
 		'cleanup' => array(),
-		'rollback' => array('php artisan migrate:rollback')
+		'rollback' => array()
 	),
 
 	// Tasks to execute after the core Rocketeer Tasks
