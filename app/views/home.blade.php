@@ -21,14 +21,14 @@
 			  <div class="carousel-inner" role="listbox">
 			  	<div class="item active">
 			      <a href="{{URL::to('postcard')}}">
-			      	<img src="\imgs\postcardsample.jpg" >
+			      	<img src="/imgs/postcardsample.jpg" >
 			      </a>
 			      <div class="carousel-caption">
 			      </div>
 			    </div>
 			    <div class="item">
 			      <a href="{{URL::to('postcard')}}">
-			      	<img src="\imgs\postcard.png">
+			      	<img src="/imgs/postcard.png">
 			      </a>
 			      <div class="carousel-caption">
 			      </div>

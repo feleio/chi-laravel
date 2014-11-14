@@ -48,13 +48,13 @@
 		  <!-- Wrapper for slides -->
 		  <div class="carousel-inner" role="listbox">
 		    <div class="item active">
-		      <img src="\imgs\postcard.png">
+		      <img src="/imgs/postcard.png">
 		      <div class="carousel-caption">
 		        
 		      </div>
 		    </div>
 		    <div class="item">
-		      <img src="\imgs\postcardsample.jpg" >
+		      <img src="/imgs/postcardsample.jpg" >
 		      <div class="carousel-caption">
 		        
 		      </div>
