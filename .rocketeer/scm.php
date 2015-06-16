@@ -8,13 +8,13 @@
 
 	// The SSH/HTTPS address to your repository
 	// Example: https://github.com/vendor/website.git
-	'repository' => 'ssh://git@ec2-54-64-231-188.ap-northeast-1.compute.amazonaws.com:/opt/git/chi/chi.git',
+	'repository' => '/home/vagrant/Git/chi.git',
 
 	// The repository credentials : you can leave those empty
 	// if you're using SSH or if your repository is public
 	// In other cases you can leave this empty too, and you will
 	// be prompted for the credentials on deploy
-	'username'   => 'git',
+	'username'   => '',
 	'password'   => '',
 
 	// The branch to deploy
